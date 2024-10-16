@@ -1,0 +1,25 @@
+/* Custom CSS styles for the virtual directory */
+.left-panel {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.news-feed {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;    
+    padding: 20px; 
+    background-color: #f8f9fa;
+}
+
+.qrcode {
+    width: 75px; 
+    height: 75px;
+}

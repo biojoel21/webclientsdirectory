@@ -9,13 +9,22 @@ In addition to the client directory, the website will also feature a newsfeed. T
 - **Client Directory**: A comprehensive list of clients with details like phone number, office floor, and name.
 - **Newsfeed**: A regularly updated feed of news and updates about the location.
 
-## Getting Started
+## Design
+![Design](webdirectory/static/webdirectory/images/website.png)
 
-To get a local copy up and running, follow these simple steps:
+## Installation
 
-1. Clone the repo
-2. Install the required packages
-3. Run the application
+1. **Clone the repository**: Use the command `git clone <repo-url>` to clone the repository to your local machine.
+
+2. **Navigate to the project directory**: Use the command `cd <project-directory>` to navigate into the project directory.
+
+3. **Create the media/profile_pictures directory**: This project requires a directory to store profile pictures. Use the command `mkdir -p media/profile_pictures` to create this directory.
+
+4. **Install the required packages**: Depending on the language and package manager this project uses, you will need to install the necessary dependencies. For example, if this is a Node.js project, use the command `npm install`. If it's a Python project with a requirements.txt file, use `pip install -r requirements.txt`.
+
+5. **Run the application**: Again, this will depend on the project. If it's a Node.js project, you might use `npm start`. If it's a Django project, you might use `python manage.py runserver`.
+
+Remember to replace `<repo-url>` and `<project-directory>` with the actual URL of the repository and the name of the project directory respectively.
 
 ## Contributing
 

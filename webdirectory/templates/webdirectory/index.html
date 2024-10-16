@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,23 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Directory</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* Custom CSS styles for the virtual directory */
-        .left-panel {
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-
-        .news-feed {
-            background-color: #ffffff;
-            padding: 20px;
-        }
-    </style>
+    <link href="{% static 'webdirectory/styles.css' %}" rel="stylesheet">
 </head>
 <body>
+    <br>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 left-panel">
+            <div class="col-md-6 left-panel">
                 <h3>Client Information</h3>
                 <table class="table">
                     <thead>
@@ -33,33 +25,26 @@
                     </thead>
                     <tbody>
                         <!-- Add client information rows here -->
+                        {% for client in clients %}
                         <tr>
-                            <td>John Doe</td>
-                            <td>123-456-7890</td>
-                            <td>5th</td>
+                            <td>{{ client.name }}</td>
+                            <td>{{ client.phone }}</td>
+                            <td>{{ client.address }}</td>
                         </tr>
-                        <tr>
-                            <td>Jane Smith</td>
-                            <td>987-654-3210</td>
-                            <td>3rd</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
-            <div class="col-md-8 news-feed">
+            <div class="col-md-6 news-feed">
                 <h3>News Feed</h3>
                 <!-- Add news feed content here -->
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
+                        {% for news in news %}
                         <div class="carousel-item active">
-                            <img src="image1.jpg" class="d-block w-100" alt="Image 1">
+                            <img src="media/{{ news.profile_picture }}" class="d-block w-100" alt="{{ news.title }}">
                         </div>
-                        <div class="carousel-item">
-                            <img src="image2.jpg" class="d-block w-100" alt="Image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="image3.jpg" class="d-block w-100" alt="Image 3">
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -68,12 +53,11 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Add this at the end of your HTML file -->
-    <footer style="text-align: center; padding: 20px; background-color: #f8f9fa;">
-        <p>Created with love by <strong>Cloud Tech Consulting</strong> | <strong>(787)-232-3155</strong> | <strong>contact@cloudtechcs.com</strong> </p>
-        <img src="path_to_your_image.jpg" alt="QR Code" style="width: 100px; height: 100px;">
-    </footer>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
 </body>
+    <!-- Add this at the end of your HTML file -->
+    <footer class="footer">
+        <p>Created with love by <strong>Cloud Tech Consulting</strong> | <strong>(787)-232-3155</strong> | <strong>contact@cloudtechcs.com</strong> </p>
+        <img src="static/webdirectory/images/QRCodeInstagram.png" alt="QR Code" class="qrcode">
+    </footer>
 </html>
