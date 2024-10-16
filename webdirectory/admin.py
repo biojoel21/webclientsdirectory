@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 # Register your models here.
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('webdirectory.urls')),
-]
+from .models import Client, NewsFeed
+
+admin.site.register(Client)
+admin.site.register(NewsFeed)

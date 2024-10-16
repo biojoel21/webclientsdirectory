@@ -1,1 +1,36 @@
 env/
+/media/*
+!/media/*/
+/media/profile_pictures/*
+!/media/profile_pictures/*/
+
+# Python related
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django related
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Development environment related
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.idea/
+
+# Operating system related
+.DS_Store
+Thumbs.db
