@@ -8,6 +8,9 @@
     <title>Virtual Directory</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="{% static 'webdirectory/styles.css' %}" rel="stylesheet">
+    <!-- Add FontAwesome CDN -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <br>
@@ -27,9 +30,9 @@
                         <!-- Add client information rows here -->
                         {% for client in clients %}
                         <tr>
-                            <td>{{ client.name }}</td>
-                            <td>{{ client.phone }}</td>
-                            <td>{{ client.address }}</td>
+                            <td><i class="fas fa-user"></i> {{ client.name }}</td>
+                            <td><i class="fas fa-phone"></i> {{ client.phone }}</td>
+                            <td><i class="fas fa-map-marker-alt"></i> {{ client.address }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

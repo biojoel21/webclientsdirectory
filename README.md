@@ -14,9 +14,9 @@ In addition to the client directory, the website will also feature a newsfeed. T
 
 ## Installation
 
-1. **Clone the repository**: Use the command `git clone <repo-url>` to clone the repository to your local machine.
+1. **Clone the repository**: Use the command `git clone https://github.com/biojoel21/webclientsdirectory.git` to clone the repository to your local machine.
 
-2. **Navigate to the project directory**: Use the command `cd <project-directory>` to navigate into the project directory.
+2. **Navigate to the project directory**: Use the command `cd cloudtech` to navigate into the project directory.
 
 3. **Create the media/profile_pictures directory**: This project requires a directory to store profile pictures. Use the command `mkdir -p media/profile_pictures` to create this directory.
 
@@ -24,7 +24,7 @@ In addition to the client directory, the website will also feature a newsfeed. T
 
 5. **Run the application**: Again, this will depend on the project. If it's a Node.js project, you might use `npm start`. If it's a Django project, you might use `python manage.py runserver`.
 
-Remember to replace `<repo-url>` and `<project-directory>` with the actual URL of the repository and the name of the project directory respectively.
+6. **Access the application**: Once the application is running, you can access it by navigating to `http://localhost:8000` in your web browser.
 
 ## Contributing
 
