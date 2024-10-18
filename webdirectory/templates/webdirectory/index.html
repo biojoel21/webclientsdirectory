@@ -19,6 +19,7 @@
         <source src="{% static 'webdirectory/music/jazzlounge.mp3' %}" type="audio/mpeg">
     </audio>
     -->
+    <h1>Condominio Las Torres</h1>
     <br>
     <div class="container">
         <div class="row">
@@ -27,7 +28,7 @@
                 <div id="clientCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
                     <div class="carousel-inner">
                         {% for client in clients %}
-                        {% if forloop.counter0|divisibleby:10 %}
+                        {% if forloop.counter0|divisibleby:14 %}  {% comment %} cambiar el numero para aumentar la cantidad de clientes y abajo tambien {% endcomment %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
                             <table class="table">
                                 <thead>
@@ -46,7 +47,7 @@
                                         <td><i class="fas fa-map-marker-alt"></i> {{ client.address }}</td>
                                         <td><i class="fas fa-building"></i>  {{ client.building }}</td>
                                     </tr>
-                        {% if forloop.counter0|add:1|divisibleby:10 or forloop.last %}
+                        {% if forloop.counter0|add:1|divisibleby:14 or forloop.last %} {% comment %} cambiar el numero para aumentar la cantidad de clientes y arriba tambien {% endcomment %}
                                 </tbody>
                             </table>
                         </div>
@@ -58,7 +59,7 @@
             <div class="col-md-6 news-feed">
                 <h3>Anuncios</h3>
                 <!-- Add news feed content here -->
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="30000">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="10000">
                     <div class="carousel-inner">
                         {% for news in news %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">

@@ -1,4 +1,10 @@
 /* Custom CSS styles for the virtual directory */
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-top: 25px;
+}
+
 .left-panel {
     background-color: #f8f9fa;
     padding: 20px;
