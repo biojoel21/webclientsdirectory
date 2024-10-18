@@ -14,8 +14,8 @@
     <link rel="icon" href="{% static 'webdirectory/images/favicon.ico' %}">
 </head>
 <body>
-     <!-- Add background music. NOT WORKING
-     <audio autoplay loop>
+    <!-- Add background music. NOT WORKING
+    <audio autoplay loop>
         <source src="{% static 'webdirectory/music/jazzlounge.mp3' %}" type="audio/mpeg">
     </audio>
     -->
@@ -23,26 +23,37 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 left-panel">
-                <h3>Información de Negocios</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Teléfono</th>
-                            <th>Torre y piso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Add client information rows here -->
+                <h3>Directorio de Negocios</h3>
+                <div id="clientCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+                    <div class="carousel-inner">
                         {% for client in clients %}
-                        <tr>
-                            <td><i class="fas fa-user"></i> {{ client.name }}</td>
-                            <td><i class="fas fa-phone"></i> {{ client.phone }}</td>
-                            <td><i class="fas fa-map-marker-alt"></i> {{ client.address }}</td>
-                        </tr>
+                        {% if forloop.counter0|divisibleby:10 %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Teléfono</th>
+                                        <th>Piso</th>
+                                        <th>Torre</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% endif %}
+                                    <tr>
+                                        <td><i class="fas fa-user"></i> {{ client.name }}</td>
+                                        <td><i class="fas fa-phone"></i> {{ client.phone }}</td>
+                                        <td><i class="fas fa-map-marker-alt"></i> {{ client.address }}</td>
+                                        <td><i class="fas fa-building"></i>  {{ client.building }}</td>
+                                    </tr>
+                        {% if forloop.counter0|add:1|divisibleby:10 or forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
                         {% endfor %}
-                    </tbody>
-                </table>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6 news-feed">
                 <h3>Anuncios</h3>
