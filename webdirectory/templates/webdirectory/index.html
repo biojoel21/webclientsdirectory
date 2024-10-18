@@ -11,19 +11,25 @@
     <!-- Add FontAwesome CDN -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="{% static 'webdirectory/images/favicon.ico' %}">
 </head>
 <body>
+     <!-- Add background music. NOT WORKING
+     <audio autoplay loop>
+        <source src="{% static 'webdirectory/music/jazzlounge.mp3' %}" type="audio/mpeg">
+    </audio>
+    -->
     <br>
     <div class="container">
         <div class="row">
             <div class="col-md-6 left-panel">
-                <h3>Client Information</h3>
+                <h3>Información de Negocios</h3>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Phone Number</th>
-                            <th>Floor</th>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Torre y piso</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,9 +45,9 @@
                 </table>
             </div>
             <div class="col-md-6 news-feed">
-                <h3>News Feed</h3>
+                <h3>Anuncios</h3>
                 <!-- Add news feed content here -->
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="30000">
                     <div class="carousel-inner">
                         {% for news in news %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
