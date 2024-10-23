@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 class Client (models.Model):
     name = models.CharField(max_length=100)
-    email = models.EmailField()
-    phone = models.CharField(max_length=15)
+    email = models.EmailField(null=True, blank=True)
+    phone = models.CharField(max_length=50)
     address = models.CharField(max_length=200)
     building = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
